@@ -1,0 +1,19 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: supersecret
+      MYSQL_DATABASE: remas 
+      MYSQL_USER: remasuser
+      MYSQL_PASSWORD: vaada123
+  web:
+    image: node:8-jessie
+    volumes:
+      - ./:/home/node/app
+    ports:
+      - 6543:6543
+    links:
+      - mysql

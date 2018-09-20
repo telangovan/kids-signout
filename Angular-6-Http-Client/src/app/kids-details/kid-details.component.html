@@ -1,0 +1,44 @@
+<h4><span class="badge badge-light ">{{kid.id}}</span> -> {{kid.kids_first_name}}</h4>
+
+<div [hidden]="submitted">
+    <form #detailCustomerForm="ngForm">
+      <div class="form-group">
+        <label for="kids_first_name">First Name</label>
+        <input type="text" class="form-control" id="firstname" required readonly
+        [(ngModel)]="kid.kids_first_name" name="kids_first_name" #kids_first_name="ngModel">
+        <div [hidden]="kids_first_name.valid || kids_first_names.pristine"
+             class="alert alert-danger">
+            First Name is required
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="kids_last_name">Last Name</label>
+        <input type="text" class="form-control" id="lastname" required readonly
+        [(ngModel)]="kid.kids_last_name" name="kids_last_name" #kids_last_name="ngModel">
+        <div [hidden]="kids_last_name.valid || kids_last_name.pristine"
+             class="alert alert-danger">
+            Last Name is required
+        </div>
+      </div>
+ 
+    <div class="form-group">
+      <label for="date">Today's Date and Time</label> 
+      <input type="text" class="form-control" name="hireDate" id="hireDate" readonly placeholder="medium"
+                   value="{{todayDate | date : 'short'}}"> 
+  </div>
+ 
+      <div class="btn-group btn-group-sm">
+        <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+        <button type="button" class="btn btn-dark" (click)="update()" [disabled]="!detailCustomerForm.form.valid">Sign-Out</button>
+        <!-- <button type="button" class="btn btn-dark" (click)="delete()">Delete</button> -->
+	    </div>
+    </form>
+</div>
+
+<div [hidden]="!submitted">
+    <p>{{message}}</p>
+    <div class="btn-group btn-group-sm">
+      <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
+    </div>
+</div>

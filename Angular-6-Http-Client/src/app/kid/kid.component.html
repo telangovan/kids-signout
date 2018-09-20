@@ -1,0 +1,4 @@
+<h5>All kids</h5>
+<div *ngFor="let kids of kids">
+  <a [routerLink]="['/kids', kids.id]" style="color:black"><span class="badge badge-dark">{{kids.id}}</span> ------> {{ kids.kids_first_name }}</a>
+</div>
