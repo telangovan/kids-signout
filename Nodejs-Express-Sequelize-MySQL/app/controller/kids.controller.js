@@ -1,12 +1,12 @@
 const db = require('../config/db.config.js');
 const Kid = db.kids;
-//const pickuptrans = db.pickup_transaction
+const Pickup = db.pickups
 
 // Post a Customer
 exports.create = (req, res) => {	
 	// Save to MySQL database
 	let pickup = req.body;
-	pickuptrans.create(pickup).then(result => {		
+	Pickup.create(pickup).then(result => {		
 		// Send created customer to client
 		res.json(result);
 	});

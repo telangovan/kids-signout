@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Kid } from './kids';
+import {Pickup} from './pickup'
 
 const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -25,8 +26,15 @@ export class KidService {
     return this.http.get<Kid>(url);
   }
 
-  addKid (kid: Kid): Observable<Kid> {
-    return this.http.post<Kid>(this.kidsUrl, kid, httpOptions);
+  signOutKid (kid: Kid, pickup: Pickup): Observable<Pickup> {
+    //console.log("value is " + JSON.stringify(pickup));
+    //console.log("value of kid is " + JSON.stringify(kid))
+    const jffid = typeof kid === 'number' ? kid : kid.id;
+    //return this.http.post<Pickup>(this.kidsUrl, pickup, httpOptions);
+    return this.http.post<Pickup>(this.kidsUrl, JSON.stringify({
+      kid_id: kid.id,
+      pickup_flag: "true"
+    }), httpOptions);
   }
 
   deleteKid (kid: Kid | number): Observable<Kid> {

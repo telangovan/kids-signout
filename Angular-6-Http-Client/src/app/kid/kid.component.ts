@@ -16,7 +16,6 @@ export class KidComponent  implements OnInit {
   constructor(private kidService: KidService) {}
     
   ngOnInit(): void {
-    console.log("am i htere");
      this.getKids();
   }
 

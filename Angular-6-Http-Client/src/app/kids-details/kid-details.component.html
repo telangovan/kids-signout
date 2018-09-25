@@ -6,10 +6,10 @@
         <label for="kids_first_name">First Name</label>
         <input type="text" class="form-control" id="firstname" required readonly
         [(ngModel)]="kid.kids_first_name" name="kids_first_name" #kids_first_name="ngModel">
-        <div [hidden]="kids_first_name.valid || kids_first_names.pristine"
+       <!-- <div [hidden]="kids_first_name.valid || kids_first_names.pristine"
              class="alert alert-danger">
             First Name is required
-        </div>
+        </div> -->
       </div>
       
       <div class="form-group">
@@ -26,16 +26,21 @@
       <label for="date">Today's Date and Time</label> 
       <input type="text" class="form-control" name="hireDate" id="hireDate" readonly placeholder="medium"
                    value="{{todayDate | date : 'short'}}"> 
-  </div>
- 
+    </div>
+    <!-- <div class="form-group">
+    <label for="id">Kid Id</label> 
+    <input type="text" class="form-control"  id="id" readonly 
+    [(ngModel)]="kid.id" name="kidid" #kid.id="ngModel" > 
+    </div> -->
       <div class="btn-group btn-group-sm">
         <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
-        <button type="button" class="btn btn-dark" (click)="update()" [disabled]="!detailCustomerForm.form.valid">Sign-Out</button>
+        <button type="button" class="btn btn-dark" (click)="signOut()" [disabled]="!detailCustomerForm.form.valid">Sign-Out</button>
         <!-- <button type="button" class="btn btn-dark" (click)="delete()">Delete</button> -->
 	    </div>
     </form>
 </div>
-
+<div [hidden]="!submitted">
+  <p>Sign-Out Successful for<span class="badge badge-light">{{kid.kids_first_name}}</span></p>
 <div [hidden]="!submitted">
     <p>{{message}}</p>
     <div class="btn-group btn-group-sm">
