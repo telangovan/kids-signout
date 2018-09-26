@@ -18,11 +18,11 @@ export class KidsDetailsComponent implements OnInit {
   pickup = new Pickup();
   submitted = false;
   message: string;
+  pflag: boolean;
   todayDate = new Date();
 
   constructor(
     private kidService: KidService,
-   // private pickupService: Pickup,
     private route: ActivatedRoute,
     private location: Location
   ) {}
@@ -41,7 +41,6 @@ export class KidsDetailsComponent implements OnInit {
 
   signOut() {
     this.submitted = true;
-    console.log ("inside signout method" + this.pickup.kid_id);
     this.save();
   }
 
@@ -55,9 +54,6 @@ export class KidsDetailsComponent implements OnInit {
     this.location.back();
   }
   private save(): void {
-    //console.log(this.pickup.kid_id);
-    //console.log(this.pickup);
-    //this.pickupService.signOut(this.pickupService.kid_id)
     this.kidService.signOutKid(this.kid,this.pickup)
         .subscribe();
   }

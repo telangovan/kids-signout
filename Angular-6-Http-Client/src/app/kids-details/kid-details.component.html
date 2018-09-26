@@ -27,11 +27,6 @@
       <input type="text" class="form-control" name="hireDate" id="hireDate" readonly placeholder="medium"
                    value="{{todayDate | date : 'short'}}"> 
     </div>
-    <!-- <div class="form-group">
-    <label for="id">Kid Id</label> 
-    <input type="text" class="form-control"  id="id" readonly 
-    [(ngModel)]="kid.id" name="kidid" #kid.id="ngModel" > 
-    </div> -->
       <div class="btn-group btn-group-sm">
         <button type="button" class="btn btn-dark" (click)="goBack()">Back</button>
         <button type="button" class="btn btn-dark" (click)="signOut()" [disabled]="!detailCustomerForm.form.valid">Sign-Out</button>
