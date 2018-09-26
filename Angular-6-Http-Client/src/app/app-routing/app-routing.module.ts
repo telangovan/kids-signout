@@ -1,27 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CustomerComponent } from '../customer/customer.component';
+//import { CustomerComponent } from '../customer/customer.component';
 import { KidComponent } from '../kid/kid.component'
 import { KidsDetailsComponent } from '../kids-details/kids-details.component'
-import { AddCustomerComponent } from '../add-customer/add-customer.component';
-import { CustomerDetailsComponent } from '../customer-details/customer-details.component';
+//import { AddCustomerComponent } from '../add-customer/add-customer.component';
+//import { CustomerDetailsComponent } from '../customer-details/customer-details.component';
 
 const routes: Routes = [
    { 
-     path: 'customers', 
-     component: CustomerComponent 
-   },
-   { 
     path: 'kids', 
     component: KidComponent 
-   },
-   { 
-     path: 'customer/add', 
-     component: AddCustomerComponent 
-   },
-   { 
-     path: 'customers/:id', 
-     component: CustomerDetailsComponent 
    },
    { 
     path: 'kids/:id', 

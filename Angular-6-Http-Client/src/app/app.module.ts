@@ -4,22 +4,22 @@ import { FormsModule }   from '@angular/forms';
 import { HttpClientModule }    from '@angular/common/http';
 import { AppRoutingModule }     from './app-routing/app-routing.module';
 import { AppComponent } from './app.component';
-import { CustomerComponent } from './customer/customer.component';
+//import { CustomerComponent } from './customer/customer.component';
 import { KidComponent } from './kid/kid.component';
-import { CustomerDetailsComponent } from './customer-details/customer-details.component';
+//import { CustomerDetailsComponent } from './customer-details/customer-details.component';
 import { KidsDetailsComponent } from './kids-details/kids-details.component';
-import { AddCustomerComponent } from './add-customer/add-customer.component';
+//import { AddCustomerComponent } from './add-customer/add-customer.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CustomerComponent,
-    CustomerDetailsComponent,
+    //CustomerComponent,
+   // CustomerDetailsComponent,
     KidsDetailsComponent,
     KidComponent,
-    AddCustomerComponent
+   // AddCustomerComponent
   ],
   imports: [
     BrowserModule,
