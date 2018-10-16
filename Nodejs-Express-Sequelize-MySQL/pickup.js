@@ -5,13 +5,13 @@ app.use(bodyParser.json())
 
 const cors = require('cors')
 const corsOptions = {
-  origin: 'http://localhost:4200',
+  origin: ['http://192.168.10.153:4200', 'http://localhost'],
   optionsSuccessStatus: 200
 }
 
 app.use(cors(corsOptions))
 
-const db = require('./app/config/db.config.js');
+//const db = require('./app/config/db.config.js');
   
 // force: true will drop the table if it already exists
 //db.sequelize.sync({force: true}).then(() => {
@@ -30,10 +30,4 @@ var server = app.listen(8088, function () {
   console.log("App listening at http://%s:%s", host, port);
 })
 
-//function initial(){
-  function Ctrl($scope)
-  {
-      $scope.date = new Date();
-  }
-  
-//}
+
