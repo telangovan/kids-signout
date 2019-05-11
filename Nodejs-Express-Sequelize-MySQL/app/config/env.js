@@ -1,8 +1,8 @@
 const env = {
-  database: 'testdb',
+  database: 'mysql',
   username: 'root',
-  password: 'supersecret',
-  host: 'localhost',
+  password: 'password',
+  host: 'db',
   dialect: 'mysql',
   pool: {
 	  max: 5,

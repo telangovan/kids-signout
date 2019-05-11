@@ -22,5 +22,8 @@ CREATE TABLE `pickups` (
 ) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
 
+insert into kids values (1, 'Foo', 'Bar', 'Admin', NOW(), NOW());
+insert into kids values (2, 'James', 'Bond', 'Admin', NOW(), NOW());
+
 
 
