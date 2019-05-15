@@ -12,8 +12,7 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class KidService {
-  private kidsUrl = 'http://localhost:8088/api/kids'; 
-  //private kidsUrl = 'https://107.170.198.167:8088/api/kids';  
+  private kidsUrl = 'http://localhost:8088/api/kids';  
   constructor( 
     private http: HttpClient
   ) { }
