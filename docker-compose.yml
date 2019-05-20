@@ -38,6 +38,19 @@ services:
       - backend    
     depends_on:
       - db
+      
+  ang6:
+    image: elu/nginx
+    restart: always
+    ports:
+      - '80:80'
+    expose:
+      - '80'
+    networks:
+      - backend
+      - frontend    
+    depends_on:
+      - node-sql    
      
 # Names our volume
 volumes:
@@ -45,4 +58,5 @@ volumes:
 
 networks:
   backend:
+  frontend:
 
